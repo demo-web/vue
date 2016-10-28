@@ -11,8 +11,9 @@ npm install
 # 开发环境 localhost:8080
 npm run dev
 
-# 生产环境
+# 生产环境 localhost:8888
 npm run build
+node server.js
 
 # 单元测试
 npm run unit
