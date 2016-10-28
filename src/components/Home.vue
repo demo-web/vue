@@ -21,28 +21,8 @@ export default {
                 url:'/home/a'
               },
               {
-                name:'news',
+                name:'BBBB(需登录)',
                 url:'/home/b'
-              },
-              {
-                name:'news',
-                url:'/home/c'
-              },
-              {
-                name:'news',
-                url:'/home/d'
-              },
-              {
-                name:'news',
-                url:'/home/e'
-              },
-              {
-                name:'news',
-                url:'/home/f'
-              },
-              {
-                name:'news',
-                url:'/home/g'
               }
               ]
             }

@@ -1,5 +1,5 @@
 <template>
-  <div>BBBBBBBBBBBBasdfasdfadsfB</div>
+  <div>你已登录，可查看保密内容</div>
 </template>
 
 <script>

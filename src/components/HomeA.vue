@@ -22,26 +22,6 @@ export default {
               {
                 name:'组件3',
                 url:'/home/a/b'
-              },
-              {
-                name:'组件4',
-                url:'/home/a/c'
-              },
-              {
-                name:'组件5',
-                url:'/home/a/d'
-              },
-              {
-                name:'组件6',
-                url:'/home/a/e'
-              },
-              {
-                name:'组件7',
-                url:'/home/a/f'
-              },
-              {
-                name:'组件8',
-                url:'/home/a/g'
               }
               ]
             }
