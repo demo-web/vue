@@ -1,14 +1,14 @@
 # app
 
-> vue 2 + vue-router 2 写一个DEOM
+> vue 2 + vue-router 2
 
-## Build Setup
+## 使用
 
 ``` bash
 # 安装依赖
 npm install
 
-# 开始环境 localhost:8080
+# 开发环境 localhost:8080
 npm run dev
 
 # 生产环境
