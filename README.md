@@ -1,27 +1,26 @@
 # app
 
-> A Vue.js project
+> vue 2 + vue-router 2 写一个DEOM
 
 ## Build Setup
 
 ``` bash
-# install dependencies
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
+# 开始环境 localhost:8080
 npm run dev
 
-# build for production with minification
+# 生产环境
 npm run build
 
-# run unit tests
+# 单元测试
 npm run unit
 
-# run e2e tests
+# e2e测试
 npm run e2e
 
-# run all tests
+# 全部测试
 npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
