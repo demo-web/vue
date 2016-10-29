@@ -25,14 +25,15 @@ npm run e2e
 npm test
 ```
 ### Sublime Text 3 Vue插件安装
+
 > 使用Package Control组件安装
 
-> 1.按Ctrl+`调出console
+> 1.按Ctrl+` 调出console
 
 > 2.粘贴以下代码到底部命令行并回车：
 
 
-```bash
+```
 import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
 ```
 > 3.重启Sublime Text 3
