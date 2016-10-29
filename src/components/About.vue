@@ -98,10 +98,9 @@ export default {
         doneEdit: function (v,index,d,o) {
           v==""?this.people[index][d]=o:this.people[index][d]=v
           this.editedTodo = null
-          this.va = ""
          },
         cancelEdit: function (todo) {
-               this.editedTodo = null
+          this.editedTodo = null
          }
       },
         directives: {

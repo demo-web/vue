@@ -5,8 +5,8 @@
     </p>
     <form @submit.prevent="login">
       <label><input v-model="email" placeholder="email"></label><br>
-      <label><input v-model="pass" placeholder="password" type="password"></label><br>
-      <button class="btn" type="submit">login</button>
+      <label><input v-model="pass" placeholder="密码为 1" type="password"></label><br>
+      <button class="btn" type="submit">登录</button>
       <p v-if="error" class="error">用户名或密码不正确！</p>
     </form>
   </div>
