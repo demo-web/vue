@@ -16,11 +16,11 @@ export default {
     return {
               title: [
               {
-                name:'组件1',
+                name:'循环列表',
                 url:'/home/a/a'
               },
               {
-                name:'组件3',
+                name:'Todo',
                 url:'/home/a/b'
               }
               ]

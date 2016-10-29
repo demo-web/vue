@@ -2,9 +2,11 @@
 <div id="app">
   <nav class="navbar navbar-default navbar-static-top" role="navigation">
        <div class="nav navbar-nav">
-	       <li><router-link to="/home">路由相关</router-link></li>
-	       <li><router-link to="/about" append exact>表格组件</router-link></li>
-	       <li id="logR"><router-link v-if="loggedIn" to="/logout">注销</router-link>
+	       <li><router-link to="/home">路由</router-link></li>
+	       <li><router-link to="/about" append exact>CRUD操作</router-link></li>
+         <li id="logReg"><router-link v-if="!loggedIn" to="/reg">注册</router-link> </li>
+	       <li id="logR">
+         <router-link v-if="loggedIn" to="/logout">注销</router-link>
 	           <router-link v-if="!loggedIn" to="/login">登录</router-link></li>
        </div>
   </nav>
@@ -39,7 +41,12 @@ export default {
 <style type="text/css">
 	#logR{
 		position: absolute;
-	    right: 0;
+	  right: 0;
 		top: 0;
 	}
+  #logReg{
+    position: absolute;
+    right: 60px;
+    top: 0;
+  }
 </style>

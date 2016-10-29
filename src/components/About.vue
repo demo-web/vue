@@ -1,28 +1,19 @@
 <template>
 <div class="m100">
-  
+  <h3>查询 name</h3>
   <div class="form-group">
-    <label>name:</label>
-    <input type="text" v-model.trim="newPerson.name"/>
-  
-    <label>number:</label>
-    <input type="number" v-model.trim="newPerson.age"/>
-  
-    <label>select:</label>
-    <select v-model="newPerson.sex">
-      <option v-for="sex in sexPerson">{{sex.sex}}</option>
-    </select>
-    <button class="btn" @click="add">增加</button>
+    <label>Search</label>
+    <input type="text" v-model="searchQuery" />
   </div>
+  <h3>内容</h3>
   <table>
     <thead>
       <tr>
         <th v-for="col in cols">{{col}}</th>
       </tr>
     </thead>
-
     <tbody>
-      <tr v-for="(peopl,index) in people">
+      <tr v-for="(peopl,index) in filteredUsers">
                     <td v-for="(v,d,ii) in peopl" @dblclick="dbltodo(index,ii,v)">
                     <label v-show="index+'-'+ii !== editedTodo">{{v}}</label>
                     <input 
@@ -38,9 +29,22 @@
                   </tr>
     </tbody>
   </table>
-
+  <h3>添加</h3>
+  <div class="form-group">
+    <label>name:</label>
+    <input type="text" v-model.trim="newPerson.name"/>
+  
+    <label>number:</label>
+    <input type="number" v-model.trim="newPerson.age"/>
+  
+    <label>select:</label>
+    <select v-model="newPerson.sex">
+      <option v-for="sex in sexPerson">{{sex.sex}}</option>
+    </select>
+    <button class="btn" @click="add">增加</button>
+  </div>
   <p>
-  计算属性：
+  PS：双击可编辑内容
   </p>
 </div>
 </template>
@@ -50,6 +54,7 @@
 export default {
     data () {
       return {
+        searchQuery:'',
         va:'',
         sexPerson: [
               { sex: '男', value: '男1' },
@@ -81,7 +86,7 @@ export default {
         }]
       }
     },
-      methods:{
+    methods:{
         add: function(){
           this.people.push(this.newPerson);
           // 添加完newPerson对象后，重置newPerson对象
@@ -102,14 +107,22 @@ export default {
         cancelEdit: function (todo) {
           this.editedTodo = null
          }
-      },
-        directives: {
+    },
+    directives: {
           focus: {
             inserted: function (el) {
                 el.focus()
               }
           }
-        }
+    },
+    computed: {
+      filteredUsers: function () {
+        var self = this
+        return self.people.filter(function (peopl) {
+          return peopl.name.indexOf(self.searchQuery) !== -1
+        })
+      }
+    }
 }
 </script>
 
