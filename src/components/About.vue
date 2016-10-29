@@ -23,14 +23,14 @@
 
     <tbody>
       <tr v-for="(peopl,index) in people">
-                    <td v-for="(v,d,ii) in peopl" @dblclick="dbltodo(index,ii)">
-                    <label v-show="index+'-'+ii !== editedTodo">{{v}} </label>
+                    <td v-for="(v,d,ii) in peopl" @dblclick="dbltodo(index,ii,v)">
+                    <label v-show="index+'-'+ii !== editedTodo">{{v}}</label>
                     <input 
                     type="text" 
                     v-model="va"
                     v-if="index+'-'+ii == editedTodo"
-                    @blur="doneEdit(va,index,d)"
-                    @keyup.enter="doneEdit(va,index,d)"
+                    @blur="doneEdit(va,index,d,v)"
+                    @keyup.enter="doneEdit(va,index,d,v)"
                     @keyup.esc="cancelEdit"
                     v-focus></td>
                     
@@ -91,13 +91,14 @@ export default {
           // 删一个数组元素
           this.people.splice(index,1);
         },
-        dbltodo:function(i,ii){
+        dbltodo:function(i,ii,o){
+          this.va = o
           this.editedTodo = i +'-'+ ii
         },
-        doneEdit: function (v,index,d) {
-          this.people[index][d] = v
+        doneEdit: function (v,index,d,o) {
+          v==""?this.people[index][d]=o:this.people[index][d]=v
           this.editedTodo = null
-          this.va = null
+          this.va = ""
          },
         cancelEdit: function (todo) {
                this.editedTodo = null
