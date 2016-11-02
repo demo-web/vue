@@ -30,15 +30,15 @@ export default {
           tig:'交易管理',
           title: [
           {
-            name:'已买到的货品',
+            name:'列表',
             url:'/home/a'
           },
           {
-            name:'进货单',
-            url:'/home/c'
+            name:'Todo',
+            url:'/home/todo'
           },
           {
-            name:'金融服务(需登录)',
+            name:'会员(需登录)',
             url:'/home/b'
           }
           ]
