@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './route-config.js'
+import router from './router/route-config.js'
 
 /* eslint-disable */
 new Vue({
