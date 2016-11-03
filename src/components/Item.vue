@@ -38,6 +38,10 @@ export default {
 }
 </script>
 <style type="text/css">
+a {
+  color: #34495e;
+  text-decoration: none;
+}
 .news-item{
   background-color:#fff;
   padding:20px 30px 20px 80px;
@@ -57,10 +61,10 @@ export default {
     margin-top:-10px;
     }
 .news-item .meta,.news-item .host{
-    font-size:14px;
+    font-size:12px;
     color:#999;
 	}
-.news-item  a,.news-item.host a{
+.news-item .meta a,.news-item .host a{
     color:#999;
     text-decoration:underline;
     }
