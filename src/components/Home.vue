@@ -27,7 +27,7 @@ export default {
       lists:[
         { 
           show:true,
-          tig:'交易管理',
+          tig:'常用',
           title: [
           {
             name:'列表',
@@ -44,11 +44,11 @@ export default {
           ]
         },
         { 
-          show:false,
-          tig:'物料清单',
+          show:true,
+          tig:'组件',
           title: [
           {
-            name:'添加物料',
+            name:'数据传给子组件',
             url:'/home/d'
           },
           {

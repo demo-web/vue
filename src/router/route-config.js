@@ -27,8 +27,9 @@ export default new VueRouter({
 							{path:'/home/a/b',component:require('../components/HomeAb.vue')}
 						]
 				},
-				{path:'/home/todo',component:require('../components/todo.vue')},
-				{path: '/home/:id', component: require('../components/HomeB.vue'), beforeEnter: requireAuth}
+				{path: '/home/todo',component:require('../components/todo.vue')},
+				{path: '/home/b', component: require('../components/HomeB.vue'), beforeEnter: requireAuth},
+				{path: '/home/d', component: require('../components/ItemList.vue')}
 		]
 	},
 	{ path: '/about', component: require('../components/About.vue')},
