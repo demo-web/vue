@@ -45,7 +45,7 @@ const routed = [
 	{ path: '/login', component: Login },
 	{ path: '/logout', beforeEnter: requireLogout},
 	{ path: '*', redirect: '/home/a/a'}
- ]
+]
 //console.log(JSON.stringify(routed))
 export default new VueRouter({
   routes: routed
