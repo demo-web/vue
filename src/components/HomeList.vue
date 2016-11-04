@@ -11,20 +11,12 @@
 
 <script>
 /* eslint-disable */
+import NavConfig from '../router/router.json';
 export default {
   data () {
     return {
-              title: [
-              {
-                name:'循环列表',
-                url:'/home/a/a'
-              },
-              {
-                name:'Todo',
-                url:'/home/a/b'
-              }
-              ]
-            }
+          title: NavConfig[0].home[0].title[0].title
+      }
   }
 }
 </script>

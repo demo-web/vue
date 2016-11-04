@@ -32,6 +32,7 @@ export default {
           this.$router.replace(this.$route.query.redirect || '/')
         }
       })
+      console.log(this.$route.query.fullPath)
     }
   }
 }

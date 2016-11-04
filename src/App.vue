@@ -3,8 +3,8 @@
 	    <nav class="navbar navbar-default navbar-static-top" role="navigation">
 	        <div class="nav nav-s">
 	       		<li class="logoH">LOGO</li>
-		        <li><router-link to="/home">首页</router-link></li>
-		        <li><router-link to="/about" append exact>CRUD操作</router-link></li>
+		        <li v-for="item in config"><router-link :to="item.url">{{item.name}}</router-link></li>
+		        <!-- <li><router-link to="/crud" append exact>CRUD操作</router-link></li> -->
 	            <li id="logReg"><router-link v-if="!loggedIn" to="/reg">注册</router-link></li>
 		        <li id="logR">
 	                <router-link v-if="loggedIn" to="/logout">注销</router-link>
@@ -26,10 +26,12 @@
 <script>
 /* eslint-disable */
 import auth from './auth'
+import NavConfig from './router/router.json';
 export default {
 	data () {
 	    return {
-	        loggedIn: auth.loggedIn()
+	        loggedIn: auth.loggedIn(),
+	        config:NavConfig
 	    }
 	},
 	created () {

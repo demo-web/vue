@@ -1,0 +1,62 @@
+[
+  {
+    "name":"首页",
+    "url":"/home",
+    "home":[
+            { 
+              "show":true,
+              "tig":"常用",
+              "title": [
+                  {
+                    "name":"列表",
+                    "url":"/home/a",
+                    "title":[
+                          {
+                            "name":"循环列表",
+                            "url":"/home/a/a"
+                          },
+                          {
+                            "name":"Todo",
+                            "url":"/home/a/b"
+                          },
+                          {
+                            "name":"第N个 ...",
+                            "url":"/home/a/c"
+                          }
+                        ]
+                  },
+                  {
+                    "name":"Todo",
+                    "url":"/home/todo"
+                  },
+                  {
+                    "name":"会员(需登录)",
+                    "url":"/home/b"
+                  }
+              ]
+            },
+            { 
+              "show":true,
+              "tig":"组件",
+              "title": [
+                  {
+                    "name":"数据传给子组件",
+                    "url":"/home/d"
+                  },
+                  {
+                    "name":".....",
+                    "url":"/home/e"
+                  },
+                  {
+                    "name":"....",
+                    "url":"/home/f"
+                  }
+              ]
+            }
+          ]
+  },
+  {
+    "name":"CRUD操作",
+    "url":"/crud"
+  }
+]

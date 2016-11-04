@@ -9,9 +9,12 @@
 import Item from './Item.vue'
 
 export default {
+    components: {
+        Item
+    },
   data(){
     return{
-lists:[
+    lists:[
     {
         "by": "pepys",
         "descendants": 17,
@@ -304,9 +307,6 @@ lists:[
     }
 ]
     }
-  },
-  components: {
-    Item
   }
 }
 </script>
