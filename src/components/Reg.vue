@@ -57,7 +57,9 @@ export default {
        var vm = this
        this.$http.post(this.apiURLCode, { mobile:+this.reg.mobile }, { headers:{ Accept:'application/x.lessocloud.v1+json' } })
        .then((response) => {
+
          //console.log(JSON.stringify(response.body.data.code))
+
          vm.reg.verify = response.body.data.code
          // if (response == false) {
             
@@ -66,7 +68,9 @@ export default {
          // }
          
        }, (response) => {
+
           // console.log(JSON.stringify(response.body))
+          
        });    
     }
   }
