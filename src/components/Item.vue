@@ -37,38 +37,31 @@ export default {
   }
 }
 </script>
-<style type="text/css">
-a {
-  color: #34495e;
-  text-decoration: none;
-}
-.news-item{
-  background-color:#fff;
-  padding:20px 30px 20px 80px;
-  border-bottom:1px solid #eee;
-  position:relative;
-  line-height:20px;
-}
-.news-item .score{
-    color:#ff6600;
-    font-size:1.1em;
-    font-weight:700;
-    position:absolute;
-    top:50%;
-    left:0;
-    width:80px;
-    text-align:center;
-    margin-top:-10px;
-    }
-.news-item .meta,.news-item .host{
-    font-size:12px;
-    color:#999;
-	}
-.news-item .meta a,.news-item .host a{
-    color:#999;
-    text-decoration:underline;
-    }
-.news-item a:hover,.news-item .score.host a:hover{
-    color:#ff6600
-    }
+
+<style lang="stylus">
+.news-item
+  background-color #fff
+  padding 20px 30px 20px 80px
+  border-bottom 1px solid #eee
+  position relative
+  line-height 20px
+  list-style-type none
+  .score
+    color #ff6600
+    font-size 1.1em
+    font-weight 700
+    position absolute
+    top 50%
+    left 0
+    width 80px
+    text-align center
+    margin-top -10px
+  .meta, .host
+    font-size .85em
+    color #999
+    a
+      color #999
+      text-decoration underline
+      &:hover
+        color #ff6600
 </style>

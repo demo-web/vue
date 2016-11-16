@@ -5,7 +5,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import auth from '../auth'
-//import NavConfig from './router.json';
+import NavConfig from './router.json';
 import Login from '../components/Login.vue'
 import Reg from '../components/Reg.vue'
 
@@ -19,12 +19,10 @@ function requireAuth (to, from, next) {
     next()
   }
 }
-
 function requireLogout (to, from, next) {
 	    auth.logout()
 	    next('/')
 	  }
-
 const routed = [
     { path: '/home', component: require('../components/Home'), redirect: '/home/d',
 		children:[
@@ -37,16 +35,18 @@ const routed = [
 				},
 				{path: '/home/todo',component:require('../components/todo')},
 				{path: '/home/b', component: require('../components/HomeB'), beforeEnter: requireAuth},
-				{path: '/home/d', component: require('../components/ItemList')}
+				{path: '/home/d', component: require('../components/ItemList')},
+				{path: '/home/ajax', component: require('../components/Ajax')}
 		]
 	},
-	{ path: '/crud', component: require('../components/crud')},
+	{ path: '/components', component: require('../components/Element.vue')},
+	{ path: '/crud', component: require('../components/Crud')},
 	{ path: '/reg', component: Reg},
 	{ path: '/login', component: Login },
 	{ path: '/logout', beforeEnter: requireLogout},
 	{ path: '*', redirect: '/home/a/a'}
 ]
-//console.log(JSON.stringify(routed))
+//console.log(JSON.stringify(route))
 export default new VueRouter({
   routes: routed
 })
