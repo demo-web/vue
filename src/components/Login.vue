@@ -3,13 +3,12 @@
     <p v-if="$route.query.redirect">
       你需要先登录。
     </p>
-    <form @submit.prevent="login">
-      <label>手机号:<input v-model="mobile" placeholder="mobile"></label><br>
-      <label>手机验证码:<input v-model="verify" placeholder=""></label><button :disabled="!!!mobile" class="btn" @click='code'>获取验证码</button><br>
-      <button :disabled="!verify" class="btn" type="submit">登录</button>
-
-      <p v-if="msg" class="error">{{msg}}</p>
+    <form  v-if="!msg">
+      <label>手机号:<input v-model="mobile" placeholder="请输入手机号" maxlength="11"></label>{{tip}}<br>
+      <label>手机验证码:<input v-model="verify" placeholder=""></label><button :disabled="mobile.length<11" class="btn" @click='code'>获取验证码</button><br>
+      <button :disabled="!verify || !mobile" @click='login' class="btn" type="submit">登录</button>
     </form>
+    <p v-if="msg" class="error">{{msg}}</p>
   </div>
 </template>
 
@@ -21,16 +20,16 @@ export default {
     return {
       loginUrl: 'http://api.lessoald.cn/auth/login/mobile',
       loginCode: 'http://api.lessoald.cn/auth/login/code',
-      mobile: '17722520806',
+      mobile: '',
       verify: '',
       msg:'',
+      tip:'',
       codeNo:true
     }
   },
   created: function () {
     if (!!localStorage.token) {
       this.msg = "已登录，手机号为"+ localStorage.mobile
-      this.mobile = localStorage.mobile
     }
   },
   methods: {
@@ -48,14 +47,6 @@ export default {
       }, (response) => {
         console.log(JSON.stringify(response))
       }); 
-      // auth.login(this.email, this.pass, loggedIn => {
-      //   if (!loggedIn) {
-      //     this.error = true
-      //   } else {
-      //     this.$router.replace(this.$route.query.redirect || '/')
-      //   }
-      // })
-      // console.log(this.$route.query.fullPath)
     },
     code () {
       var vm = this
@@ -63,14 +54,15 @@ export default {
       .then((response) => {
         console.log(JSON.stringify(response.body.data.code))
         vm.verify = response.body.data.code
+        vm.tip = ''
       }, (response) => {
-        console.log(JSON.stringify(response))
+        vm.tip = "用户不存在或帐户被冻结"
+        //console.log(JSON.stringify(response))
       }); 
     }
   }
 }
 </script>
-
 <style>
 .loginBox{
   margin: 100px;

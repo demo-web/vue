@@ -39,7 +39,6 @@ const routed = [
 				{path: '/home/ajax', component: require('../components/Ajax')}
 		]
 	},
-	{ path: '/components', component: require('../components/Element.vue')},
 	{ path: '/crud', component: require('../components/Crud')},
 	{ path: '/reg', component: Reg},
 	{ path: '/login', component: Login },
