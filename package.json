@@ -17,7 +17,8 @@
     "vue": "^2.0.1",
     "vue-bulma-tooltip": "^1.0.0",
     "vue-popup-mixin": "^1.0.6",
-    "vue-router": "^2.0.0"
+    "vue-router": "^2.0.0",
+    "vue-resource": "^1.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
