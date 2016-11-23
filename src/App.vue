@@ -2,7 +2,7 @@
 	<div id="app">
 	    <nav class="navbar navbar-default navbar-static-top" role="navigation">
 	        <div class="nav nav-s">
-	       		<li class="logoH">LOGO</li>
+	       		<li class="logoH">fdhsdf</li>
 		        <li v-for="item in config"><router-link :to="item.url">{{item.name}}</router-link></li>
 		        <!-- <li><router-link to="/crud" append exact>CRUD操作</router-link></li> -->
 	            <li id="logReg"><router-link v-if="!loggedIn" to="/reg">注册</router-link></li>
