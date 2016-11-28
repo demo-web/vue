@@ -49,7 +49,8 @@ const routed = [
 				},
 				{path: '/home/todo',component:require('../components/todo')},
 				{path: '/home/b', component: HomeB, beforeEnter: requireAuth},
-				{path: '/home/d', component: ItemList}
+				{path: '/home/d', component: ItemList},
+				{path: '/member/upload', component: require('../components/element')}
 		]
 	},
 	{ path: '/crud', component: crud},

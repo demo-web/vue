@@ -68,6 +68,10 @@
                     "url":"/member/profile"
                   },
                   {
+                    "name":"上传",
+                    "url":"/member/upload"
+                  },
+                  {
                     "name":"修改密码",
                     "url":"/member/password"
                   },
